@@ -91,11 +91,19 @@ public class BA extends AbstractNetwork {
 
     public static void main(String args[]) throws IOException {
         boolean isDist=true;
+        boolean largeGraph = true;
         int n = 100;
         int m = 1;
         BA ba = new BA(n, m);
         ba.createNetwork();
-        Network2File.outputPajekData(ba.getLabel()+"net", ba);
+//        Network2File.outputPajekData(ba.getLabel()+".net", ba);
+        
+        if(largeGraph){
+            n = 1000;
+            ba = new BA(n,m);
+            ba.createNetwork();
+            Network2File.outputPajekData(ba.getLabel()+".net", ba);
+        }
         
         if(isDist){
             n=1000000;

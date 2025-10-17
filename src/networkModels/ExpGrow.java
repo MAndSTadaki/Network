@@ -91,13 +91,21 @@ public class ExpGrow extends AbstractNetwork {
      */
     public static void main(String args[]) throws IOException {
         boolean isDist = false;
+        boolean largeGraph = true;
         int n = 100;
         int m = 1;
         ExpGrow eg = new ExpGrow(n, m);
         eg.createNetwork();
-        String filename=eg.label+".net";
+        String filename = eg.label + ".net";
         Network2File.outputPajekData(filename, eg);
 
+        if (largeGraph) {
+            n = 1000;
+            eg = new ExpGrow(n, m);
+            eg.createNetwork();
+            filename = eg.label + ".net";
+            Network2File.outputPajekData(filename, eg);
+        }
         if (isDist) {
             n = 10000;
             eg = new ExpGrow(n, m);

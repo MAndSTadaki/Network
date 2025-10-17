@@ -71,8 +71,8 @@ public class ER extends AbstractNetwork {
     }
     
     public static void main(String args[]) throws IOException {
-        int N = 100;
-        int L = 500;
+        int N = 1000;
+        int L = 24975;
         ER er = new ER(N, L);
         er.createNetwork();
         String filename = er.getLabel()+".net";
