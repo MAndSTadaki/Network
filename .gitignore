@@ -1,6 +1,4 @@
-nbproject/private/
-build/
-dist/
+target/
 *.py
 *.pdf
 *.txt
